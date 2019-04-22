@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ManterStatusCarrinho">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/gravar-status-carrinho(1).zip!/" />
+      <root url="jar://$PROJECT_DIR$/job-update-status-carrinho.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

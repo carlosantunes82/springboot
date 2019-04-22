@@ -1,0 +1,33 @@
+package br.com.drogaraia.portaltcanalytics.jms;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.com.drogaraia.portaltcanalytics.service.ConsultaTCService;
+
+@Component
+public class ConversaoTCListenerAMQP {
+	
+	Logger logger = LoggerFactory.getLogger(ConversaoTCListenerAMQP.class);
+
+	@Autowired
+	private ConsultaTCService consultaTCService;
+
+	/**
+	 * Esse metodo retira as mensagens enviadas para o RabbitMQ pelo PortalTC, faz o
+	 * parse e persiste no cassandra.
+	 * 
+	 * @param message a mensagem enviada pelo PortalTC, contendo os metadados da
+	 *                consulta do operador
+	 */
+	@RabbitListener(queues = "${ampq.rabbitmq.conversaoTc.queueName}")
+	public void receiveMessage(Message message) {
+		String msgJson = new String(message.getBody());
+		logger.info("Recebido do RabbitMQ: " + msgJson);
+//		this.consultaTCService.save(msgJson);
+	}
+}

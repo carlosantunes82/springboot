@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/../Arquitetura_Devops/eureka" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Arquitetura_Devops/projetoSemEureka" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Arquitetura_Devops/teste_microservico" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Arquitetura_Devops/zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-controller" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-model-impl" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-repository-impl" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-repository-interface" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-service-impl" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-service-interface" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Fast_Pass/rd-fast-pass" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Fast_Pass/rd-fast-pass-integracao" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Fast_Pass/rd-fast-pass/src/test/java/br/com/rd/rdfastpassapi/integration/service/CestaServiceIntegrationTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carrinho-api" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rd-scheduled" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Ofex/ofex" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../Ofex/ofex-api" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: zuul
+    
+eureka:
+  instance:
+    hostname: localhost
+    
+server:
+  port: 8080
+ 
+zuul:
+  prefix: /api
+  ignored-services: /*
+  
+  routes:
+    customers:
+      #path: /customers/**
+      serviceId: customers
+      strip-prefix: false
+ 
+    products:
+      path: /products/**
+      serviceId: products
+      strip-prefix: false

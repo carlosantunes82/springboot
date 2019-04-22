@@ -1,0 +1,46 @@
+package br.com.drogaraia.portaltcanalytics.email;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
+
+public class EmailUtil {
+	
+	private EmailUtil(){}
+	
+	private static final String EMAIL_CHARSET = "UTF-8";
+	private static final String EMAIL_HOST_NAME = System.getProperty("retaguarda.email.hostname", "smtprd02.raiadrogasil.com.br");
+	private static final int EMAIL_NUMBER_PORT = Integer.parseInt(System.getProperty("retaguarda.email.numberport", "25"));
+	private static final String EMAIL_USER_NAME = System.getProperty("retaguarda.email.username", "aplicacoes.raia");
+	private static final String EMAIL_PASSWORD = System.getProperty("retaguarda.email.password", "Raia.2010");
+	private static final String EMAIL_FROM = System.getProperty("retaguarda.email.from", "rd.aplicacoes@raiadrogasil.com.br");
+	private static Logger logger = Logger.getLogger(EmailUtil.class.getName());
+	
+//	public static void enviarEmail(EmailMessageVO email){
+	public static void enviarEmail(){
+			
+		HtmlEmail multiPartEmail = new HtmlEmail();
+		try {
+			
+			multiPartEmail.setCharset(EMAIL_CHARSET);
+			multiPartEmail.setHostName(EMAIL_HOST_NAME);
+			multiPartEmail.setSmtpPort(EMAIL_NUMBER_PORT);
+			multiPartEmail.setAuthentication(EMAIL_USER_NAME, EMAIL_PASSWORD);
+			multiPartEmail.setFrom(EMAIL_FROM);
+//			for(String enderecoEmail : email.getDestinatarios()){
+//				multiPartEmail.addTo(enderecoEmail);
+//			}
+//			multiPartEmail.setSubject(email.getAssunto());
+//			multiPartEmail.setHtmlMsg(email.getMensagem());
+			multiPartEmail.setSubject("teste subject");
+			multiPartEmail.setHtmlMsg("teste msg");
+			multiPartEmail.setTo("");
+			multiPartEmail.send();
+			
+		} catch (EmailException e) {
+			logger.log(Level.SEVERE, "Erro ao enviar e-mail");
+		}
+	}	
+}

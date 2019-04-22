@@ -1,0 +1,86 @@
+package br.com.drogaraia.portaltcanalytics.service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.naming.LimitExceededException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.google.gson.Gson;
+
+import br.com.drogaraia.portaltcanalytics.dao.entity.ConsultaTC;
+import br.com.drogaraia.portaltcanalytics.dao.repository.ConsultaTCRepository;
+import br.com.drogaraia.portaltcanalytics.report.ReportExecuterManager;
+import br.com.drogaraia.portaltcanalytics.sftp.SftpConnector;
+
+@Service
+public class ConsultaTCServiceImpl implements ConsultaTCService {
+
+	@Autowired
+	private ConsultaTCRepository consultaTCRepository;
+
+	@Value("${portaltc.analytics.reportPath}")
+	private String CSV_OUT_FILE_PATH;
+	
+	@Value("${portaltc.analytics.ftp.user}")
+	private String username;
+	@Value("${portaltc.analytics.ftp.server}")
+	private String host;
+	@Value("${portaltc.analytics.ftp.password}")
+	private String password;
+	@Value("${portaltc.analytics.ftp.port}")
+	private Integer port;
+	
+	Logger logger = LoggerFactory.getLogger(ConsultaTCServiceImpl.class);
+
+	public ConsultaTC save(String json) {
+		Gson gson = new Gson();
+		ConsultaTC consultaTC = gson.fromJson(json, ConsultaTC.class);
+		consultaTC.setDataConsulta(new Date(consultaTC.getDataConsultaMilis()));
+
+		Map<String, String> resultJsonMap = new HashMap<>();
+		if (consultaTC.getCdOperador() != null)
+			resultJsonMap.put("cod_operador", String.valueOf(consultaTC.getCdOperador()));
+		if (consultaTC.getDosagem() != null)
+			resultJsonMap.put("ds_dosagem", consultaTC.getDosagem());
+		if (consultaTC.getFormaFarmaceutica() != null)
+			resultJsonMap.put("ds_formaFarmaceutica", consultaTC.getFormaFarmaceutica());
+		if (consultaTC.getMarca() != null)
+			resultJsonMap.put("ds_marca", consultaTC.getMarca());
+		if (consultaTC.getPrincipioAtivo() != null)
+			resultJsonMap.put("ds_principioAtivo", consultaTC.getPrincipioAtivo());
+		if (consultaTC.getTipoConsulta() != null)
+			resultJsonMap.put("ds_tipoConsulta", consultaTC.getTipoConsulta());
+		if (consultaTC.getCdFormaFarma() != null)
+			resultJsonMap.put("cd_formaFarma", consultaTC.getCdFormaFarma());
+		if (consultaTC.getJbossOriginHostname() != null)
+			resultJsonMap.put("origin_hostname", consultaTC.getJbossOriginHostname());
+		if (consultaTC.getJbossOriginIp() != null)
+			resultJsonMap.put("origin_ip", consultaTC.getJbossOriginIp());
+		consultaTC.setResultJson(resultJsonMap);
+
+		consultaTC.createId();
+
+		return consultaTCRepository.insert(consultaTC);
+	}
+
+	public String generateReport(Integer diasCorteRelatorio) throws LimitExceededException {
+		ReportExecuterManager manager = ReportExecuterManager.getInstance(this.consultaTCRepository);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+//		String reportFileName = CSV_OUT_FILE_PATH +  sdf.format(new Date()) + ".csv";
+		String reportFileName = CSV_OUT_FILE_PATH;
+
+		SftpConnector sftp = new SftpConnector(this.username, this.host, this.password, this.port);
+		
+		manager.runReport(diasCorteRelatorio, reportFileName, sftp);
+		
+		return reportFileName;
+	}
+}

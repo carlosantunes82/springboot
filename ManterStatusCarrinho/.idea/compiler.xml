@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="carrinho-api" />
+        <module name="ofex-api" />
+        <module name="rd-fast-pass-api" />
+        <module name="rd-fast-pass-integracao" />
+        <module name="rd-scheduled" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="carrinho-api" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="ofex-api" target="1.8" />
+      <module name="pedido" target="1.8" />
+      <module name="pedido-controller" target="1.8" />
+      <module name="pedido-model-impl" target="1.8" />
+      <module name="pedido-repository-impl" target="1.8" />
+      <module name="pedido-repository-interface" target="1.8" />
+      <module name="pedido-service-impl" target="1.8" />
+      <module name="pedido-service-interface" target="1.8" />
+      <module name="projetoSemEureka" target="1.8" />
+      <module name="rd-fast-pass-api" target="1.8" />
+      <module name="rd-fast-pass-integracao" target="1.8" />
+      <module name="rd-scheduled" target="1.8" />
+      <module name="test" target="1.8" />
+      <module name="teste" target="1.8" />
+      <module name="zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="carrinho-api" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="ofex-api" options="-parameters" />
+      <module name="pedido-controller" options="-parameters" />
+      <module name="pedido-model-impl" options="-parameters" />
+      <module name="pedido-repository-impl" options="-parameters" />
+      <module name="pedido-repository-interface" options="-parameters" />
+      <module name="pedido-service-impl" options="-parameters" />
+      <module name="pedido-service-interface" options="-parameters" />
+      <module name="projetoSemEureka" options="-parameters" />
+      <module name="rd-fast-pass-api" options="-parameters" />
+      <module name="rd-fast-pass-integracao" options="-parameters" />
+      <module name="rd-scheduled" options="-parameters" />
+      <module name="test" options="-parameters" />
+      <module name="teste" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

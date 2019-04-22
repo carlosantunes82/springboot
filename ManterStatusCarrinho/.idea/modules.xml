@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/carrinho-api/carrinho-api.iml" filepath="$PROJECT_DIR$/carrinho-api/carrinho-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Ofex/ofex/ofex-api.iml" filepath="$PROJECT_DIR$/../Ofex/ofex/ofex-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Fast_Pass/rd-fast-pass/rd-fast-pass-api.iml" filepath="$PROJECT_DIR$/../Fast_Pass/rd-fast-pass/rd-fast-pass-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Fast_Pass/rd-fast-pass-integracao/rd-fast-pass-integracao.iml" filepath="$PROJECT_DIR$/../Fast_Pass/rd-fast-pass-integracao/rd-fast-pass-integracao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rd-scheduled/rd-scheduled.iml" filepath="$PROJECT_DIR$/rd-scheduled/rd-scheduled.iml" />
+    </modules>
+  </component>
+</project>

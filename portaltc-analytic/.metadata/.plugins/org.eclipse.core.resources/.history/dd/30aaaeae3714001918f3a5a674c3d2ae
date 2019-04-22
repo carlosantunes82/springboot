@@ -1,0 +1,18 @@
+package br.com.drogaraia.portaltcanalytics;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+@SpringBootApplication
+@EnableAspectJAutoProxy
+public class PortaltcAnalyticsApplication {
+<<<<<<< HEAD
+	public static void main(String[] args2) {
+		SpringApplication.run(PortaltcAnalyticsApplication.class, args2);
+=======
+	public static void main(String[] args1) {
+		SpringApplication.run(PortaltcAnalyticsApplication.class, args1);
+>>>>>>> origin/teste_2
+	}
+}

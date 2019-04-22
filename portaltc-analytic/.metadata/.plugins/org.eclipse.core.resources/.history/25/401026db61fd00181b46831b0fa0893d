@@ -1,0 +1,32 @@
+spring.data.cassandra.contact-points=10.1.55.58,10.1.55.59,10.1.55.60
+#spring.data.cassandra.contact-points=10.1.15.12
+spring.data.cassandra.port=9042
+spring.data.cassandra.keyspace-name=clientes
+spring.data.cassandra.username=cassandra
+spring.data.cassandra.password=cassandra
+
+#spring.rabbitmq.host=10.1.55.75
+#spring.rabbitmq.username=portaltc
+#spring.rabbitmq.password=portaltcprod
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+
+# as configs abaixo comentadas foram usadas na primeira implementaçao do servico, que utilizava JMS com activeMQ. Agora utiliza AMQP com RabbitMQ 
+#spring.activemq.broker-url=tcp://localhost:61616
+#spring.activemq.user=admin
+#spring.activemq.password=admin
+
+#Quando a cron vai rodar
+portaltc.analytics.gerar.relatorio="*/10 * * * * *"
+#0 00 20 ? * MON
+
+#Data de corte do relatorio, ex: se colocarmos o valor 7, o relatorio sera gerado com a (data do dia -7 dias)
+#Obs: temos que sincronizar a expressao 'gerar.relatorio' com 
+# a expressao 'periodo.corte.relatorio' para rodarem por exeplo de 7 em 7 dias   
+portaltc.analytics.periodo.corte.relatorio=1
+
+ampq.rabbitmq.conversaoTc.queueName=conversao_tc
+portaltc.analytics.reportPath=/tmp/listaConsultaTC_report_
+

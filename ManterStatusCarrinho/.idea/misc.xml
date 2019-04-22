@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/job-update-status-carrinho/pom.xml" />
+        <option value="$PROJECT_DIR$/gravar-status-carrinho/pom.xml" />
+        <option value="$PROJECT_DIR$/carrinho-api/pom.xml" />
+        <option value="$PROJECT_DIR$/rd-scheduled/pom.xml" />
+        <option value="$PROJECT_DIR$/../Ofex/ofex-api/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pom.xml" />
+        <option value="$PROJECT_DIR$/../Ofex/ofex/pom.xml" />
+        <option value="$PROJECT_DIR$/../Fast_Pass/rd-fast-pass/pom.xml" />
+        <option value="$PROJECT_DIR$/../Fast_Pass/rd-fast-pass-integracao/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-model-impl/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-repository-impl/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-repository-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-service-impl/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pedido-service-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/../BackOffice/BackommercePedido/pedido/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

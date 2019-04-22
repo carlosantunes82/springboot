@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: products
+    
+eureka:
+  instance:
+    hostname: localhost
+    
+server:
+  port: 8070

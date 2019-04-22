@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jan 08 19:10:29 BRST 2019
+jffi-1.2.16-native.jar>nexus=
+jffi-1.2.16.pom>nexus=
+jffi-1.2.16.jar>nexus=
